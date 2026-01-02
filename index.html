@@ -2,8 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1400, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🎉 ¡Feliz Cumpleaños Juddy! 🎉</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap');
 
@@ -17,18 +21,22 @@
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             min-height: 100vh;
-            min-width: 1200px;
-            overflow-x: auto;
+            overflow-x: hidden;
             position: relative;
             cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">✨</text></svg>'), auto;
         }
 
         .container {
             max-width: 1400px;
-            min-width: 1200px;
             margin: 0 auto;
-            padding: 40px;
+            padding: 20px;
             text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px;
+            }
         }
 
         /* Header espectacular */
@@ -40,15 +48,27 @@
         h1 {
             font-family: 'Pacifico', cursive;
             color: #fff;
-            font-size: 5em;
+            font-size: 2.5em;
             text-shadow: 4px 4px 8px rgba(0,0,0,0.3), 0 0 40px rgba(255,255,255,0.5);
             animation: titleFloat 3s ease-in-out infinite;
             margin: 20px 0;
         }
 
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 4em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            h1 {
+                font-size: 5em;
+            }
+        }
+
         .name {
             font-family: 'Pacifico', cursive;
-            font-size: 6em;
+            font-size: 3em;
             background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
             background-size: 200% 200%;
             -webkit-background-clip: text;
@@ -58,6 +78,18 @@
             text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
             filter: drop-shadow(4px 4px 8px rgba(0,0,0,0.4));
             margin: 30px 0;
+        }
+
+        @media (min-width: 768px) {
+            .name {
+                font-size: 5em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .name {
+                font-size: 6em;
+            }
         }
 
         @keyframes titleFloat {
@@ -81,7 +113,7 @@
         }
 
         .age {
-            font-size: 8em;
+            font-size: 4em;
             font-weight: bold;
             background: linear-gradient(45deg, #ff6b9d, #c44569, #ff6b9d);
             background-size: 200% 200%;
@@ -92,6 +124,18 @@
             filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
         }
 
+        @media (min-width: 768px) {
+            .age {
+                font-size: 6em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .age {
+                font-size: 8em;
+            }
+        }
+
         @keyframes pulse {
             0%, 100% { transform: scale(1) rotate(0deg); }
             50% { transform: scale(1.15) rotate(5deg); }
@@ -100,13 +144,29 @@
         /* Mensaje principal mejorado */
         .main-message {
             background: rgba(255, 255, 255, 0.95);
-            border-radius: 30px;
-            padding: 40px 50px;
-            margin: 50px auto;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 15px;
             max-width: 900px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.4);
             position: relative;
             overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .main-message {
+                padding: 35px;
+                margin: 40px auto;
+                border-radius: 25px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .main-message {
+                padding: 40px 50px;
+                margin: 50px auto;
+                border-radius: 30px;
+            }
         }
 
         .main-message::before {
@@ -128,17 +188,41 @@
 
         .main-message h2 {
             color: #667eea;
-            font-size: 2.5em;
+            font-size: 1.5em;
             margin-bottom: 20px;
             position: relative;
         }
 
+        @media (min-width: 768px) {
+            .main-message h2 {
+                font-size: 2em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .main-message h2 {
+                font-size: 2.5em;
+            }
+        }
+
         .main-message p {
-            font-size: 1.3em;
+            font-size: 1em;
             color: #333;
             line-height: 1.8;
             margin: 15px 0;
             position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .main-message p {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .main-message p {
+                font-size: 1.3em;
+            }
         }
 
         .highlight {
@@ -149,35 +233,99 @@
 
         /* Sistema de Cartas Interactivas */
         .cards-section {
-            margin: 60px 0;
-            padding: 40px;
+            margin: 30px 0;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
+            border-radius: 20px;
             backdrop-filter: blur(10px);
+        }
+
+        @media (min-width: 768px) {
+            .cards-section {
+                margin: 40px 0;
+                padding: 30px;
+                border-radius: 25px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .cards-section {
+                margin: 60px 0;
+                padding: 40px;
+                border-radius: 30px;
+            }
         }
 
         .cards-title {
             color: #fff;
-            font-size: 2.5em;
-            margin-bottom: 40px;
+            font-size: 1.8em;
+            margin-bottom: 30px;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
             font-weight: bold;
         }
 
+        @media (min-width: 768px) {
+            .cards-title {
+                font-size: 2.2em;
+                margin-bottom: 35px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .cards-title {
+                font-size: 2.5em;
+                margin-bottom: 40px;
+            }
+        }
+
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(4, 280px);
-            gap: 40px;
+            grid-template-columns: 1fr;
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
-            justify-content: center;
+            padding: 0 15px;
+        }
+
+        @media (min-width: 576px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 35px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .cards-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 40px;
+            }
         }
 
         .card {
             perspective: 1000px;
-            height: 350px;
+            height: 300px;
             cursor: pointer;
             position: relative;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .card {
+                height: 330px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .card {
+                height: 350px;
+            }
         }
 
         .card-inner {
@@ -202,8 +350,20 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 30px;
+            padding: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        @media (min-width: 768px) {
+            .card-front, .card-back {
+                padding: 25px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .card-front, .card-back {
+                padding: 30px;
+            }
         }
 
         .card-front {
@@ -218,9 +378,23 @@
         }
 
         .card-icon {
-            font-size: 5em;
-            margin-bottom: 20px;
+            font-size: 3em;
+            margin-bottom: 15px;
             animation: cardIconBounce 2s ease-in-out infinite;
+        }
+
+        @media (min-width: 768px) {
+            .card-icon {
+                font-size: 4em;
+                margin-bottom: 18px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .card-icon {
+                font-size: 5em;
+                margin-bottom: 20px;
+            }
         }
 
         @keyframes cardIconBounce {
@@ -230,18 +404,42 @@
 
         .card-front h3 {
             color: #fff;
-            font-size: 1.8em;
+            font-size: 1.3em;
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        @media (min-width: 768px) {
+            .card-front h3 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .card-front h3 {
+                font-size: 1.8em;
+            }
+        }
+
         .card-back p {
             color: #fff;
-            font-size: 1.3em;
+            font-size: 0.95em;
             text-align: center;
             line-height: 1.6;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
             font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            .card-back p {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .card-back p {
+                font-size: 1.3em;
+            }
         }
 
         .card-hint {
@@ -253,17 +451,45 @@
 
         /* Caja de Regalo Mejorada */
         .gift-section {
-            margin: 80px 0;
+            margin: 40px 0;
             position: relative;
         }
 
+        @media (min-width: 768px) {
+            .gift-section {
+                margin: 60px 0;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .gift-section {
+                margin: 80px 0;
+            }
+        }
+
         .gift-container {
-            margin: 50px auto;
+            margin: 30px auto;
             cursor: pointer;
             position: relative;
-            width: 250px;
-            height: 250px;
+            width: 180px;
+            height: 180px;
             transition: transform 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .gift-container {
+                width: 220px;
+                height: 220px;
+                margin: 40px auto;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .gift-container {
+                width: 250px;
+                height: 250px;
+                margin: 50px auto;
+            }
         }
 
         .gift-container:hover {
@@ -333,11 +559,25 @@
 
         .click-instruction {
             color: #fff;
-            font-size: 1.6em;
-            margin-top: 30px;
+            font-size: 1em;
+            margin-top: 20px;
             animation: blink 1.5s ease-in-out infinite;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
             font-weight: bold;
+        }
+
+        @media (min-width: 768px) {
+            .click-instruction {
+                font-size: 1.3em;
+                margin-top: 25px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .click-instruction {
+                font-size: 1.6em;
+                margin-top: 30px;
+            }
         }
 
         @keyframes blink {
@@ -432,11 +672,27 @@
 
         /* Pastel más elaborado */
         .cake-section {
-            margin: 80px 0;
-            padding: 50px;
+            margin: 40px 0;
+            padding: 20px;
             background: rgba(255,255,255,0.1);
-            border-radius: 30px;
+            border-radius: 20px;
             backdrop-filter: blur(10px);
+        }
+
+        @media (min-width: 768px) {
+            .cake-section {
+                margin: 60px 0;
+                padding: 35px;
+                border-radius: 25px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .cake-section {
+                margin: 80px 0;
+                padding: 50px;
+                border-radius: 30px;
+            }
         }
 
         .cake-container {
@@ -445,10 +701,24 @@
         }
 
         .cake {
-            width: 320px;
-            height: 350px;
+            width: 220px;
+            height: 280px;
             margin: 0 auto;
             position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .cake {
+                width: 280px;
+                height: 320px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .cake {
+                width: 320px;
+                height: 350px;
+            }
         }
 
         .cake-layer {
@@ -567,24 +837,54 @@
 
         .cake-instruction {
             color: #fff;
-            font-size: 1.5em;
-            margin-top: 30px;
+            font-size: 1em;
+            margin-top: 20px;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
             font-weight: 600;
         }
 
+        @media (min-width: 768px) {
+            .cake-instruction {
+                font-size: 1.3em;
+                margin-top: 25px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .cake-instruction {
+                font-size: 1.5em;
+                margin-top: 30px;
+            }
+        }
+
         /* Botones mejorados */
         .controls {
-            margin: 60px 0;
+            margin: 40px 0;
             display: flex;
-            gap: 25px;
+            gap: 15px;
             justify-content: center;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
+            padding: 0 15px;
+        }
+
+        @media (min-width: 768px) {
+            .controls {
+                gap: 20px;
+                margin: 50px 0;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .controls {
+                gap: 25px;
+                margin: 60px 0;
+                flex-wrap: nowrap;
+            }
         }
 
         .btn {
-            padding: 20px 40px;
-            font-size: 1.4em;
+            padding: 12px 25px;
+            font-size: 1em;
             border: none;
             border-radius: 50px;
             cursor: pointer;
@@ -593,6 +893,20 @@
             font-weight: bold;
             position: relative;
             overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .btn {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .btn {
+                padding: 20px 40px;
+                font-size: 1.4em;
+            }
         }
 
         .btn::before {
@@ -645,36 +959,84 @@
         /* Estadísticas mejoradas */
         .stats {
             background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
-            border-radius: 25px;
-            padding: 35px;
-            margin: 50px auto;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 15px;
             max-width: 700px;
-            min-width: 600px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             border: 3px solid #ffd700;
         }
 
+        @media (min-width: 768px) {
+            .stats {
+                padding: 30px;
+                margin: 40px auto;
+                border-radius: 25px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .stats {
+                padding: 35px;
+                margin: 50px auto;
+            }
+        }
+
         .stats h3 {
             color: #667eea;
-            margin-bottom: 25px;
-            font-size: 2em;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        @media (min-width: 768px) {
+            .stats h3 {
+                font-size: 1.8em;
+                margin-bottom: 25px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .stats h3 {
+                font-size: 2em;
+            }
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 15px;
             width: 100%;
+        }
+
+        @media (min-width: 576px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
         }
 
         .stat-item {
             background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 20px;
+            padding: 15px;
             border-radius: 15px;
             color: white;
-            font-size: 1.1em;
+            font-size: 0.95em;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s;
+        }
+
+        @media (min-width: 768px) {
+            .stat-item {
+                padding: 18px;
+                font-size: 1.05em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .stat-item {
+                padding: 20px;
+                font-size: 1.1em;
+            }
         }
 
         .stat-item:hover {
@@ -719,19 +1081,47 @@
 
         /* Footer mejorado */
         footer {
-            margin-top: 80px;
-            padding: 40px;
+            margin-top: 40px;
+            padding: 25px;
             background: rgba(255,255,255,0.1);
-            border-radius: 30px 30px 0 0;
+            border-radius: 20px 20px 0 0;
             backdrop-filter: blur(10px);
         }
 
+        @media (min-width: 768px) {
+            footer {
+                margin-top: 60px;
+                padding: 35px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            footer {
+                margin-top: 80px;
+                padding: 40px;
+                border-radius: 30px 30px 0 0;
+            }
+        }
+
         footer p {
-            margin: 10px 0;
-            font-size: 1.4em;
+            margin: 8px 0;
+            font-size: 1em;
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            footer p {
+                font-size: 1.2em;
+                margin: 10px 0;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            footer p {
+                font-size: 1.4em;
+            }
         }
 
         .heart {
@@ -1351,5 +1741,8 @@
             setTimeout(() => star.remove(), 1200);
         });
     </script>
+
+    <!-- Bootstrap JS (opcional, pero recomendado) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
